@@ -1,13 +1,15 @@
 import React from 'react';
-import './styles.css';
-import Images from '../../assets';
-import { Transaction } from '../list/types';
+import { useParams, Redirect, useHistory } from 'react-router-dom';
+
+import { useTransactionList } from '../../App';
 import Card from '../../components/Card';
 import Label from '../../components/Label';
+
+import { Transaction } from '../list/types';
 import { convertDate } from '../../utils/date';
-import { useParams, Redirect, useHistory } from 'react-router-dom';
-import { useTransactionList } from '../../App';
 import { currency } from '../../utils/string';
+import Images from '../../assets';
+import './styles.css';
 
 function Detail() {
   let { id } = useParams();

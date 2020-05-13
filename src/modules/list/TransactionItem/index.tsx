@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Label from '../../../components/Label';
-import { convertDate } from '../../../utils/date';
 
-import { Transaction } from '../types';
 import Images from '../../../assets';
-import './styles.css';
+import { Transaction } from '../types';
 import { currency } from '../../../utils/string';
+import { convertDate } from '../../../utils/date';
+import './styles.css';
 
 type Props = {
   data: Transaction;

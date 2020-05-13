@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './styles.css';
+
 import Images from '../../../assets';
 import { Transaction } from '../types';
+import './styles.css';
 
 type Props = {
   onFilter: (query: string) => void;

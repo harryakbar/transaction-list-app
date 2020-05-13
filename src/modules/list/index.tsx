@@ -4,10 +4,10 @@ import Filter from './Filter';
 import TransactionItem from './TransactionItem';
 import TotalTransaction from './TotalTransaction';
 
-import './styles.css';
-import { Transaction } from './types';
-import { useAPI } from '../../utils/useAPI';
 import { useTransactionList } from '../../App';
+import { useAPI } from '../../utils/useAPI';
+import { Transaction } from './types';
+import './styles.css';
 
 function List() {
   const [fetchData, result] = useAPI();

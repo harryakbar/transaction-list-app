@@ -1,6 +1,7 @@
 import React from 'react';
-import './styles.css';
+
 import { currency } from '../../../utils/string';
+import './styles.css';
 
 type Props = {
   total: number
