@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useReducer, useContext } from 'react';
+import {
+  Route,
+  Switch,
+  BrowserRouter as Router,
+} from "react-router-dom";
+
 import './App.css';
+import List from './modules/list';
+import Detail from './modules/detail';
+import { TransactionList } from './modules/list/types';
+
+function reducer(state: TransactionList, action: any) {
+  switch (action.type) {
+    case 'load':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+const TransactionListContext = React.createContext([{}, ({type, payload}: {type: any, payload: any}) => {}]);
+export const useTransactionList = () => {
+  const contextValue = useContext(TransactionListContext);
+  return contextValue;
+};
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, {});
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TransactionListContext.Provider value={[state, dispatch]}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={List} />
+            <Route exact path="/:id" component={Detail} />
+            <Route path="*" component={()=> <h1>Not Found</h1>} />
+          </Switch>
+        </Router>
+      </TransactionListContext.Provider>
     </div>
   );
 }

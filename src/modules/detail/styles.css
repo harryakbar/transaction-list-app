@@ -1,0 +1,32 @@
+.button-back {
+  border: 1px solid #fd6542;
+  background: none;
+  color: #fd6542;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.detail-wrapper {
+  width: 40rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+img.inbox { width: 2rem }
+
+h4 { margin-bottom: 0 }
+
+h4:first-child { margin-top: 0 }
+
+@media screen and (max-width: 425px) {
+  .detail-wrapper {
+    width: 100%;
+  }
+
+  .button-back {
+    margin-left: 1rem;
+  }
+}

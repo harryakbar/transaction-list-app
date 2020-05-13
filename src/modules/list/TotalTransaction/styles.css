@@ -1,0 +1,13 @@
+.total-transaction-wrapper {
+  flex-direction: column;
+}
+
+.total-transaction-wrapper > * {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.total-transaction-wrapper span {
+  font-weight: 700;
+  color: #FD6542;
+}
