@@ -23,12 +23,12 @@ const sortConfig = [
   {
     title: 'Tanggal terbaru',
     compareFunc: (a: Transaction, b: Transaction) => 
-      a.created_at > b.created_at ? 1 : b.created_at > a.created_at ? -1 : 0,
+      a.created_at < b.created_at ? 1 : b.created_at < a.created_at ? -1 : 0,
   },
   {
     title: 'Tanggal terlama',
     compareFunc: (a: Transaction, b: Transaction) => 
-      a.created_at < b.created_at ? 1 : b.created_at < a.created_at ? -1 : 0,
+      a.created_at > b.created_at ? 1 : b.created_at > a.created_at ? -1 : 0,
   },
 ];
 
