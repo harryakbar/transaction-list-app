@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer } from 'react';
 import {
   Route,
   Switch,
@@ -9,6 +9,7 @@ import './App.css';
 import List from './modules/list';
 import Detail from './modules/detail';
 import { TransactionList } from './modules/list/types';
+import { TransactionListContext } from './context/context';
 
 function reducer(state: TransactionList, action: any) {
   switch (action.type) {
@@ -18,12 +19,6 @@ function reducer(state: TransactionList, action: any) {
       return state;
   }
 }
-
-const TransactionListContext = React.createContext([{}, ({type, payload}: {type: any, payload: any}) => {}]);
-export const useTransactionList = () => {
-  const contextValue = useContext(TransactionListContext);
-  return contextValue;
-};
 
 function App() {
   const [state, dispatch] = useReducer(reducer, {});

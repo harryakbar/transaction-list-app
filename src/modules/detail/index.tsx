@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams, Redirect, useHistory } from 'react-router-dom';
 
-import { useTransactionList } from '../../App';
 import Card from '../../components/Card';
 import Label from '../../components/Label';
 
+import { useTransactionList } from '../../context/context';
 import { Transaction } from '../list/types';
 import { convertDate } from '../../utils/date';
 import { currency } from '../../utils/string';
